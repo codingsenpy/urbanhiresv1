@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Urban Hires - Post a Job</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="static/assets/css/main.css" />
+    <link rel="stylesheet" href="static/assets/css/hire.css" />
+    <noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+</head>
+<body>
+    <div class="form-container">
+        <form action="/submit_job" method="post">
+            <h2>Post a Job</h2>
+            <input type="text" name="title" placeholder="Job Title" required>
+            <textarea name="description" rows="5" placeholder="Job Description" required></textarea>
+            <input type="text" name="location" placeholder="Location" required>
+            <input type="number" name="salary" placeholder="Salary" required>
+            <button type="submit">Submit Job</button>
+        </form>
+    </div>
+</body>
+</html>
