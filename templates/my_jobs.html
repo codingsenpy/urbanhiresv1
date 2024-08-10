@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Posted Jobs</title>
+    <link rel="stylesheet" href="static/assets/css/my_jobs.css">
+</head>
+<body>
+    <h2>Your Posted Jobs</h2>
+    <div class="just">
+         <ul>
+        {% for job in jobs %}
+        <li>
+            {{ job['jobtype'] }} - {{ job['pay'] }} rs - {{ job['location'] }} - {{ job['time'] }}
+             <a href="#" class="edit-button" onclick="editJob('{{ job._id }}'); return false;" style="color:#39FF14;text-decoration: underline;">Edit</a>
+        <a href="#" class="delete-button" onclick="deleteJob('{{ job._id }}'); return false;" style="color:red; text-decoration: underline;" >Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+<!--    <a href="{{ url_for('home') }}">Back to Home</a>-->
+<script>
+    function editJob(jobId) {
+        // Redirect to edit job page
+        window.location.href = `/edit_job/${jobId}`;
+    }
+
+    function deleteJob(jobId) {
+        if (confirm("Are you sure you want to delete this job?")) {
+            fetch(`/delete_job/${jobId}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('Job deleted successfully.');
+                    document.getElementById(`job-${jobId}`).remove();
+                } else {
+                    alert('Error deleting job.');
+                }
+            });
+        }
+    }
+</script>
+<a href="{{ url_for('home') }}" style="color:grey; text-decoration: underline;">Back to Home</a>
+</body>
+</html>

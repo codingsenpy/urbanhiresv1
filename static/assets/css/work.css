@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600');
+
+/* General styles */
+body {
+  background: #1b1f22;
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  margin: 1.5rem 0;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin: 1rem auto;
+  max-width: 600px;
+  padding: 1rem;
+  transition: background 0.2s ease-in-out;
+  color: #ffffff;
+}
+
+li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #e0e0e0;
+}
+
+/* Button styles */
+.view-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.view-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  li {
+    max-width: 100%;
+  }
+
+  .view-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+.edit-button{
+ padding:20px
+}

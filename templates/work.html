@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="static/assets/css/work.css">
+    <!-- Ensure jQuery is included -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<h1>helloworld</h1>
+<h2>Jobs</h2>
+    <ul id="job-list">
+        {% for job in jobs %}
+        <li id="job-{{ job._id }}">
+            {{ job['jobtype'] }} - {{ job['pay'] }}rs - {{ job['location'] }} - {{ job['time'] }}
+            <a href="#" class="view-button" onclick="acceptJob('{{ job._id }}'); return false;">Accept</a>
+        </li>
+        {% endfor %}
+    </ul>
+<script>
+    function acceptJob(jobId) {
+        console.log("Attempting to accept job ID:", jobId);  // Debugging console log
+        $.ajax({
+            url: "{{ url_for('accept_job') }}",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ job_id: jobId }),
+            success: function(response) {
+                console.log("Job accepted response:", response);  // Debugging console log
+                alert("Job accepted!");
+                removeAcceptedJob(jobId);
+            },
+            error: function(error) {
+                console.error("There was an error accepting the job:", error);
+            }
+        });
+    }
+
+    function removeAcceptedJob(jobId) {
+        const jobElement = document.getElementById(`job-${jobId}`);
+        jobElement.remove(); // Remove the entire job element from the DOM
+    }
+</script>
+<a href="{{ url_for('show_accepted_jobs') }}" style="color:lightgrey; text-decoration: underline;">View Accepted Jobs</a>
 </body>
 </html>

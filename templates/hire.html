@@ -11,14 +11,16 @@
 </head>
 <body>
     <div class="form-container">
-        <form action="/submit_job" method="post">
+        <form action="{{ url_for('hire') }}" method="post">
             <h2>Post a Job</h2>
-            <input type="text" name="title" placeholder="Job Title" required>
+            <input type="text" name="jobtype" placeholder="Job Title" required>
             <textarea name="description" rows="5" placeholder="Job Description" required></textarea>
             <input type="text" name="location" placeholder="Location" required>
-            <input type="number" name="salary" placeholder="Salary" required>
+            <input name="time" type="text" placeholder="time">
+            <input type="number" name="pay" placeholder="Salary" required>
             <button type="submit">Submit Job</button>
         </form>
+        <a href="{{ url_for('my_jobs') }}" class="view-jobs-link">View My Posted Jobs</a>
     </div>
 </body>
 </html>

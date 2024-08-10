@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Job</title>
+    <link rel="stylesheet" href="/static/assets/css/hire.css">
+    <noscript><link rel="stylesheet" href="/static/assets/css/noscript.css"></noscript>
+</head>
+<body>
+<h2>Edit Job</h2>
+<form action="{{ url_for('edit_job', job_id=job._id) }}" method="post">
+    <input type="text" name="jobtype" value="{{ job['jobtype'] }}" required>
+    <input type="text" name="pay" value="{{ job['pay'] }}" required>
+    <input type="text" name="location" value="{{ job['location'] }}" required>
+    <input type="text" name="time" value="{{ job['time'] }}" required>
+    <button type="submit">Save Changes</button>
+</form>
+<a href="{{ url_for('my_jobs') }}">Cancel</a>
+</body>
+</html>

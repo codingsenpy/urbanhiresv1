@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accepted Jobs</title>
+    <link rel="stylesheet" href="static/assets/css/work.css">
+<!--    <style>-->
+
+<!--        body {-->
+<!--             font-family: Arial, sans-serif;-->
+<!--            background: #f7f7f7 url("{{ url_for('static', filename='images/background.jpg') }}") no-repeat center center fixed;-->
+<!--            background-size: cover;-->
+<!--            margin: 0;-->
+<!--            padding: 20px;-->
+<!--            color: #333; /* Text color */-->
+<!--            line-height: 1.6; /* Line height for better readability */-->
+<!--        }-->
+<!--        h2 {-->
+<!--            color: #333;-->
+<!--        }-->
+<!--        ul {-->
+<!--            list-style-type: none;-->
+<!--            padding: 0;-->
+<!--        }-->
+<!--        li {-->
+<!--            background-color: #fff;-->
+<!--            padding: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            border-radius: 5px;-->
+<!--            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+<!--        li:hover {-->
+<!--            background-color: #f0f0f0;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+    <h2>Accepted Jobs</h2>
+    <ul>
+        {% for job in accepted_jobs %}
+        <li>{{ job['jobtype'] }} - {{ job.pay }} - {{ job.location }} - {{ job.time }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

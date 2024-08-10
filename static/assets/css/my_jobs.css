@@ -1,0 +1,60 @@
+/* General styles */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  background: #1b1f22;
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.just{
+display  : flex;
+}
+
+h2 {
+position:absolute;
+bottom: 90%;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.edit-button {
+  color: #39FF14;
+  margin-left: 0.5rem;
+}
+
+.delete-button {
+  color: red;
+  margin-left: 0.5rem;
+}
+
+.back-link {
+  color: grey;
+  text-decoration: underline;
+  margin-top: 1rem;
+}
